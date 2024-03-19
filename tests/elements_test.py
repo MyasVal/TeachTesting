@@ -1,10 +1,12 @@
 import time
 
-from pages.base_page import BasePage
+from pages.element_page import TextBoxPage
 
 
-
-def test(driver):
-    page = BasePage(driver, 'https://demoqa.com/')
-    page.open()
-    time.sleep(3)
+class TestElements:
+    class TestTextBox:
+        def test_text_box(self, driver):
+            test_text_box = TextBoxPage(driver, 'https://demoqa.com/text-box')
+            test_text_box.open()
+            test_text_box.fill_all_fields()
+            time.sleep(5)
